@@ -1,6 +1,5 @@
 <?php
-require_once "C:\\xampp\\htdocs\\phpprograms\\config.php";
-
+require_once "https://raw.githubusercontent.com/Oshwaa/Oshwaa.github.io/main/config.php";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
