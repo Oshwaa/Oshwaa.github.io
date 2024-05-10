@@ -1,0 +1,209 @@
+.button-28 {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #FFA500; /* Change border color to orange */
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #FFA500; /* Change text color to orange */
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 60px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: calc(25% - 10px);
+    will-change: transform;
+}
+
+.button-28:disabled {
+    pointer-events: none;
+}
+
+.button-28:hover {
+    color: #000; /* Change text color on hover to black */
+    background-color: #FFA500; /* Change background color on hover to orange */
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.button-28:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.panel {
+    background-color: #1A1A1A; /* Change panel background color to black */
+    color: #FFA500; /* Change panel text color to orange */
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.container img {
+    display: inline-block;
+}
+
+.marquee {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    background: #FFA500; /* Change marquee background color to orange */
+    color: #000; /* Change marquee text color to black */
+    border: 1px solid #FFA500; /* Change marquee border color to orange */
+}
+
+.marquee p {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -moz-animation: scroll-left 5s linear infinite;
+    -webkit-animation: scroll-left 5s linear infinite;
+    animation: scroll-left 5s linear infinite;
+}
+
+@-moz-keyframes scroll-left {
+    0% {
+        -moz-transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes scroll-left {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-left {
+    0% {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+.custom-bg-color {
+    background-color: #141414;
+}
+
+.panel2 {
+    background-color: #1d1c1c; /* Change panel background color to black */
+    color: #ffffff; /* Change panel text color to orange */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+
+/* CSS */
+.button-85 {
+  padding: 10px 40px;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
