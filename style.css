@@ -141,25 +141,30 @@ nav, .logo{
 h1{
     color: white;
     text-align: center;
-    font-size: 6rem;
+    font-size: 9vw;
     font-family: "Poppins", sans-serif;
     font-weight: 100;
 }
 p{
     color: white;
     text-align: center;
-    font-size: 8rem;
+    font-size: 5vw;
     font-family: "Poppins",sans-serif;
     font-weight: 100;
 }
-
+/* container */
+.container{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 20px;
+    padding: auto;
+}
 /* circle photo frame */
 
 .circle{
-    width: 20vw;
-    height: 20vw;
-    max-width: 150px;
-    max-height: 150px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -168,8 +173,7 @@ p{
     position: sticky; /* Sticky positioning */
     top: 20px; /* Distance from the top of the viewport */
     background-color: lightblue; 
-    top: 180px;
-    left: 180px;
+    left: 17vw;
 }
 .circle img{
     width: 100%;

@@ -5,4 +5,8 @@
     #hamburger-nav{
         display: flex;
     }
+    .container{
+        grid-template-columns: auto;
+        text-align: center;
+    }
 }
