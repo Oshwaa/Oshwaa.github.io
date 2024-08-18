@@ -1,6 +1,7 @@
 # Portfolio
 
-[test] (Oshwaa.github.io) 
+[Test Here](https://Oshwaa.github.io)
+
 # In Progress
 # My portfolio
 
