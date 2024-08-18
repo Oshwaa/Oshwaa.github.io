@@ -1,79 +1,88 @@
 /* General */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Include padding and border in width/height calculations */
 }
-body{
+
+body {
     background-color: rgb(0, 0, 0);
     font-family: "Poppins", sans-serif;
+    overflow-x: hidden; /* Hide horizontal overflow */
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
-p{
-    color:rgb( 85, 85, 85);
+
+p {
+    color: rgb(85, 85, 85);
 }
 
 /* Transitions */
-
-a, .btn{
+a, .btn {
     transition: all 300ms ease;
 }
 
 /* NAV */
-nav, .nav-links{
+nav, .nav-links {
     display: flex;
 }
-nav{
+
+nav {
     justify-content: space-around;
     align-items: center;
     height: 17vh;
+    
 }
-.nav-links{
+
+.nav-links {
     gap: 2rem;
     list-style: none;
     font-size: 1.5rem;
     font-weight: 200;
 }
-a{
+
+a {
     color: white;
     text-decoration: none;
     text-decoration-color: black;
 }
-a:hover{
+
+a:hover {
     color: grey;
     text-decoration: underline;
     text-underline-offset: 1rem;
-    text-decoration-color:  rgb(30, 255, 0)
+    text-decoration-color: rgb(30, 255, 0);
 }
-nav, .logo{
+
+nav, .logo {
     color: white;
     font-size: 2rem;
     font-weight: 200;
 }
-.logo:hover{
+
+.logo:hover {
     cursor: default;
 }
 
 /* HAMBURGER MENU */
-
-#hamburger-nav{
+#hamburger-nav {
     display: none;
 }
 
-.hamburger-menu{
+.hamburger-menu {
     position: relative;
     display: inline-block;
- 
 }
-.hamburger-logo{
+
+.hamburger-logo {
     font-size: 2rem;
 }
 
-.hamburger-icon{
+.hamburger-icon {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -81,104 +90,169 @@ nav, .logo{
     width: 30px;
     cursor: pointer;
 }
-.hamburger-icon span{
+
+.hamburger-icon span {
     width: 100%;
     height: 2px;
     background-color: white;
-    transition: all 0.3 ease-in-out;
+    transition: all 0.3s ease-in-out; /* Added 's' for seconds */
 }
 
-.menu-links{
+.menu-links {
     position: absolute;
-    top:100%;
-    right: 0%;
+    top: 100%;
+    right: 0;
     background-color: black;
     width: fit-content;
-    max-height: 0%;
+    max-height: 0;
     overflow: hidden;
-    transition: all 0.3 ease-in-out;
+    transition: all 0.3s ease-in-out; /* Added 's' for seconds */
 }
 
-.menu-links a{
+.menu-links a {
     display: block;
     padding: 10px;
     text-align: center;
     font-size: 1.5rem;
     color: white;
     text-decoration: none;
-    transition: all 0.3 ease-in-out;
+    transition: all 0.3s ease-in-out; /* Added 's' for seconds */
 }
 
-.menu-links li{
+.menu-links li {
     list-style: none;
 }
 
-.menu-links.open{
+.menu-links.open {
     max-height: 300px;
 }
 
-.hamburger-icon.open span:first-child{
-    transform: rotate(45deg) translate(10px,5px);
+.hamburger-icon.open span:first-child {
+    transform: rotate(45deg) translate(10px, 5px);
 }
-.hamburger-icon.open span:nth-child(2){
+
+.hamburger-icon.open span:nth-child(2) {
     opacity: 0;
 }
-.hamburger-icon.open span:last-child{
-    transform: rotate(-45deg) translate(10px,-5px);
-}
-/*
-.hamburger-icon span :first-child{
-    transform: none;
-}
-.hamburger-icon span :first-child{
-    opacity: 0%;
-}
-.hamburger-icon span :first-child{
-    transform: none;
-}
-*/
 
-h1{
+.hamburger-icon.open span:last-child {
+    transform: rotate(-45deg) translate(10px, -5px);
+}
+
+h1 {
     color: white;
     text-align: center;
-    font-size: 9vw;
+    font-size: 10vw;
+    font-family: "Poppins", sans-serif;
+    padding-left: 2vw;
+    font-weight: 100;
+    display: inline-block;
+    white-space: nowrap; 
+    overflow: hidden; 
+}
+
+.typing {
+    border-right: 1px solid white;
+    animation: typing 4s steps(30, end), blink 0.75s step-end infinite;
+    box-sizing: border-box; 
+}
+
+/* Keyframes for typing effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; } 
+}
+
+@keyframes blink {
+    from { border-color: transparent; }
+    to { border-color: white; }
+}
+
+p {
+    color: white;
+    
+    text-align: center;
+    font-size: 3vw;
     font-family: "Poppins", sans-serif;
     font-weight: 100;
+    border-radius: 2vw;
 }
-p{
-    color: white;
-    text-align: center;
-    font-size: 5vw;
-    font-family: "Poppins",sans-serif;
-    font-weight: 100;
+
+/* Container */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
-/* container */
-.container{
+
+.container2 {
+    
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
-    gap: 20px;
-    padding: auto;
+    padding: 2vw;
+    font-family: "Poppins", sans-serif;
 }
-/* circle photo frame */
+.container3{
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Subtle shadow for depth */
+    background: #ffffff;
+    color:black;
+}
 
-.circle{
-    width: 150px;
-    height: 150px;
+/* Circle photo frame */
+.circle {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: sticky; /* Sticky positioning */
-    top: 20px; /* Distance from the top of the viewport */
-    background-color: lightblue; 
-    left: 17vw;
+    background-color: lightblue;
+    box-sizing: border-box;
 }
-.circle img{
+
+.circle img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+/* Basic Footer Styling */
+footer {
+    background-color: #0f0f0f;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
 
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
