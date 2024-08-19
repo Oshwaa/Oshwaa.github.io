@@ -170,20 +170,24 @@ h1 {
     50% { border-color: rgb(30, 255, 0); }
 }
 
-p {
+.box {
     color: white;
-    
+    border-radius: 20px; /* Rounds the corners */
     text-align: center;
-    font-size: 3vw;
+    font-size: 3vw; 
     font-family: "Poppins", sans-serif;
     font-weight: 100;
-    
+    background-color: transparent; /* Green background */
+    border: 2px solid rgb(255, 255, 255); /* Light border color */
+    /* Removed the extra border-radius */
 }
+
 .parent-container {
     display: flex;
     justify-content: center; 
     align-items: center;     
     height: 100%;
+    position: relative;
 }
 
 /* Container */
@@ -193,6 +197,16 @@ p {
     justify-content: center;
     width: 100vw;
     height: 100vh;
+}
+.education {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0a0a0a;
 }
 /* aboutme div */
 .container2 {
@@ -267,3 +281,17 @@ footer {
 .footer-links a:hover {
     text-decoration: underline;
 }
+
+.psection {
+    color: white;
+    position: absolute; /* Absolute positioning */
+    top: 0;             /* Align to the top */
+    left: 50%;          /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for exact centering */
+    font-size: 3vw;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;         /* Remove default margin */
+}
+
