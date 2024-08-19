@@ -152,9 +152,11 @@ h1 {
 }
 
 .typing {
-    border-right: 1px solid white;
-    animation: typing 4s steps(30, end), blink 0.75s step-end infinite;
-    box-sizing: border-box; 
+    border-right: 1px solid transparent;
+    /* animation: typing 4s steps(30, end), blink 0.75s step-end infinite; */
+    box-sizing: border-box;
+    font-weight: 200;
+    color: transparent;
 }
 
 /* Keyframes for typing effect */
@@ -163,9 +165,9 @@ h1 {
     to { width: 100%; } 
 }
 
-@keyframes blink {
-    from { border-color: transparent; }
-    to { border-color: white; }
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(30, 255, 0); }
 }
 
 p {
@@ -175,24 +177,33 @@ p {
     font-size: 3vw;
     font-family: "Poppins", sans-serif;
     font-weight: 100;
-    border-radius: 2vw;
+    
+}
+.parent-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: 100%;
 }
 
 /* Container */
 .container {
     display: flex;
-    align-items: center;
+    padding-top: 10vw;
     justify-content: center;
-    
+    width: 100vw;
+    height: 100vh;
 }
-
+/* aboutme div */
 .container2 {
-    
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
-    padding: 2vw;
     font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0a0a0a;
 }
 .container3{
     border-radius: 8px;
