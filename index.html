@@ -28,7 +28,7 @@
                 <span></span>
             </div>
             <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#aboutme" onclick="scrollTo('aboutme')">About</a></li>
                 <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
                 <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
                 <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
@@ -37,7 +37,6 @@
     </nav>
    
     <div>
-        <br>
         <div class="container">
             <div class="circle">
                 <img src="assets/test.jpg" alt="My photo"> 
@@ -46,6 +45,7 @@
             
         </div>
     </div>
+
     <div class="parent-container">
         <p class="psection">About me</p>  
         <div class="container2" id="aboutme">
@@ -56,19 +56,38 @@
     </div>
     
     <div class="parent-container">
-        <p class="psection">Education</p>  
-        <div class="education" id="Education">
-            <p class = "box">
-            AMA Computer College Cabanatauan<br>
-                Bachelor Of Science In Computer Engineering
-        </p>
+        <div id="education" class="education">
+            <div class = "fixedbox">
+                <h2>Education</h2>
+                <img src="assets/education.png" alt="Education-logo" class="mini-icon">
+                <p style="font-weight: bold;">AMA Computer College Cabanatuan</p>
+                <p>Bachelor Of Science In Computer Engineering</p>
+                <p>Major in Web Application Development</p>            
+            </div>
+
+            <div class="fixedbox">
+                <h2>Certificates and Badges</h2>
+                <img src="assets/experience.png" alt="Education-logo" class="mini-icon">
+                <div class="button-container"><button onclick="window.location.href='https://www.credly.com/badges/127bdddb-8eef-4b75-a680-ff9a851af286/public_url';" class="link-button">CCNA - Introduction to Networks</button>
+                <button onclick="window.location.href='https://www.credly.com/badges/77582a95-d857-4e8e-8a5f-bed76a4b32ff/public_url';" class="link-button">Network Security</button>
+                <button onclick="window.location.href='https://simpli.app.link/nDKYty8rbMb';" class="link-button">Getting Started With Node.js</button></div>
+            </div>
+            <div class="fixedbox">
+                <h2>Skills</h2>
+                <img src="assets/skills.png" alt="Skill-logo" class="mini-icon">
+                <p>• Web Development • Software Development</p>
+                <p>• C# • PHP • Javascript</p>
+                <p>• Node.js</p>
+            </div>
+
+
         </div>
         
     </div>
 <!-- FOOOOOTERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR -->
     <footer>
         <div class="footer-content">
-            <p>Bringing Ideas to Life: Work in Progress.</p>
+            Bringing Ideas to Life: Work in Progress.
             <ul class="footer-links">
                 <li><a href="#">ijstomazar@gmail.com</a></li>
             </ul>

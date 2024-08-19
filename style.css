@@ -4,21 +4,18 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Include padding and border in width/height calculations */
+    box-sizing: border-box;
 }
 
 body {
     background-color: rgb(0, 0, 0);
     font-family: "Poppins", sans-serif;
-    overflow-x: hidden; /* Hide horizontal overflow */
+    overflow-x: hidden;
+    color: rgb(255, 255, 255);
 }
 
 html {
     scroll-behavior: smooth;
-}
-
-p {
-    color: rgb(85, 85, 85);
 }
 
 /* Transitions */
@@ -26,19 +23,16 @@ a, .btn {
     transition: all 300ms ease;
 }
 
-/* NAV */
-nav, .nav-links {
-    display: flex;
-}
-
+/* Navigation */
 nav {
+    display: flex;
     justify-content: space-around;
     align-items: center;
     height: 17vh;
-    
 }
 
 .nav-links {
+    display: flex;
     gap: 2rem;
     list-style: none;
     font-size: 1.5rem;
@@ -46,29 +40,26 @@ nav {
 }
 
 a {
-    color: white;
+    color: rgb(236, 236, 236);
     text-decoration: none;
-    text-decoration-color: black;
+    text-decoration-color: rgb(255, 255, 255);
 }
 
 a:hover {
-    color: grey;
+    color: rgb(197, 197, 197);
     text-decoration: underline;
     text-underline-offset: 1rem;
     text-decoration-color: rgb(30, 255, 0);
 }
 
-nav, .logo {
-    color: white;
+.logo {
+    color: rgb(255, 255, 255);
     font-size: 2rem;
     font-weight: 200;
-}
-
-.logo:hover {
     cursor: default;
 }
 
-/* HAMBURGER MENU */
+/* Hamburger Menu */
 #hamburger-nav {
     display: none;
 }
@@ -94,19 +85,20 @@ nav, .logo {
 .hamburger-icon span {
     width: 100%;
     height: 2px;
-    background-color: white;
-    transition: all 0.3s ease-in-out; /* Added 's' for seconds */
+    background-color: rgb(255, 255, 255);
+    transition: all 0.3s ease-in-out;
 }
 
 .menu-links {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: black;
+    border-radius: 20px;
+    background-color: rgb(29, 29, 29);
     width: fit-content;
     max-height: 0;
     overflow: hidden;
-    transition: all 0.3s ease-in-out; /* Added 's' for seconds */
+    transition: all 0.3s ease-in-out;
 }
 
 .menu-links a {
@@ -116,7 +108,7 @@ nav, .logo {
     font-size: 1.5rem;
     color: white;
     text-decoration: none;
-    transition: all 0.3s ease-in-out; /* Added 's' for seconds */
+    transition: all 0.3s ease-in-out;
 }
 
 .menu-links li {
@@ -139,58 +131,88 @@ nav, .logo {
     transform: rotate(-45deg) translate(10px, -5px);
 }
 
+/* Heading */
 h1 {
-    color: white;
     text-align: center;
     font-size: 10vw;
     font-family: "Poppins", sans-serif;
     padding-left: 2vw;
     font-weight: 100;
     display: inline-block;
-    white-space: nowrap; 
-    overflow: hidden; 
+    white-space: nowrap;
+    overflow: hidden;
+}
+h2{
+    font-size: 2vw;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+}
+p{
+    font-size: 60%;
+    font-weight: 300;
+    color: rgb(70, 70, 70);
 }
 
+/* Typing Effect */
 .typing {
     border-right: 1px solid transparent;
-    /* animation: typing 4s steps(30, end), blink 0.75s step-end infinite; */
     box-sizing: border-box;
     font-weight: 200;
     color: transparent;
 }
 
-/* Keyframes for typing effect */
 @keyframes typing {
     from { width: 0; }
-    to { width: 100%; } 
+    to { width: 100%; }
 }
 
 @keyframes blink-caret {
     from, to { border-color: transparent }
-    50% { border-color: rgb(30, 255, 0); }
+    50% { border-color: rgb(255, 255, 255); }
 }
 
+/* Box Styling */
 .box {
-    color: white;
-    border-radius: 20px; /* Rounds the corners */
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
     text-align: center;
-    font-size: 3vw; 
+    font-size: 3vw;
     font-family: "Poppins", sans-serif;
     font-weight: 100;
-    background-color: transparent; /* Green background */
-    border: 2px solid rgb(255, 255, 255); /* Light border color */
-    /* Removed the extra border-radius */
+    background-color: transparent;
+    border: 2px solid rgb(255, 254, 254);
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+}
+.fixedbox {
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
+    text-align: center;
+    font-size: 2vw;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    background-color: transparent;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 10px;
+    margin: 10px;
+    width: 30vw;
+    height: 30vh;
+    display: flex; /* Use flexbox to center the content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Ensure children are stacked vertically */
 }
 
+/* Containers */
 .parent-container {
     display: flex;
-    justify-content: center; 
-    align-items: center;     
-    height: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     position: relative;
 }
 
-/* Container */
 .container {
     display: flex;
     padding-top: 10vw;
@@ -198,17 +220,7 @@ h1 {
     width: 100vw;
     height: 100vh;
 }
-.education {
-    display: grid;
-    grid-template-columns: auto;
-    align-items: center;
-    font-family: "Poppins", sans-serif;
-    font-weight: 100;
-    width: 100vw;
-    height: 100vh;
-    background-color: #0a0a0a;
-}
-/* aboutme div */
+
 .container2 {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -217,17 +229,64 @@ h1 {
     font-weight: 100;
     width: 100vw;
     height: 100vh;
-    background-color: #0a0a0a;
+    background-color: #000000;
 }
-.container3{
-    border-radius: 8px;
-    box-sizing: border-box;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Subtle shadow for depth */
-    background: #ffffff;
-    color:black;
+.education {
+    display: flex;
+    justify-content: space-between;
+    justify-items: space;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
 }
 
-/* Circle photo frame */
+.container3 {
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    background: #ffffff;
+    color: black;
+}
+/* ICON FRAME */
+.mini-icon {
+
+    width: 24px; /* Adjust size */
+    height: 24px; /* Adjust size */
+    background-image: url('path/to/your-icon.png');
+    background-size: cover; /* Ensures the image covers the element */
+    background-repeat: no-repeat; /* Prevents repeating */
+    display: inline-block; /* Ensures the icon sizes correctly */
+    /* Optionally, you can add margins/paddings as needed */
+}
+.button-container {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; /* Center vertically */
+    height: 100%; /* Adjust height to fill the fixedbox */
+}
+
+.link-button {
+    padding-bottom: 4%;
+    font-size: 60%;
+    font-weight: bold;
+    color: rgb(70, 70, 70);
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    text-align: center; /* Center text within the button */
+}
+
+.link-button:hover {
+    text-decoration: underline;
+    color: rgb(50, 50, 50);
+}
+
+/* Circle Photo Frame */
 .circle {
     width: 200px;
     height: 200px;
@@ -245,7 +304,8 @@ h1 {
     height: 100%;
     object-fit: cover;
 }
-/* Basic Footer Styling */
+
+/* Footer */
 footer {
     background-color: #0f0f0f;
     color: rgb(255, 255, 255);
@@ -283,15 +343,14 @@ footer {
 }
 
 .psection {
-    color: white;
-    position: absolute; /* Absolute positioning */
-    top: 0;             /* Align to the top */
-    left: 50%;          /* Center horizontally */
-    transform: translateX(-50%); /* Adjust for exact centering */
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 3vw;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     text-align: center;
-    margin: 0;         /* Remove default margin */
+    margin: 0;
 }
-
