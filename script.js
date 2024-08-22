@@ -13,11 +13,13 @@ function scrollTo(id) {
     var element = document.getElementById(id);
     
     if (element) {
+        toggleMenu()
         element.scrollIntoView({
             behavior: 'smooth', // Smooth scrolling
             block: 'center',      // Align the element to the top of the view
             inline:'nearest'
         });
+        
     }
 }
 
@@ -38,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (isInViewport(typingElement)) {
             typingElement.style.animation = 
             'typing 1.5s steps(20, end), blink-caret .75s step-end infinite';
-            typingElement.style.color = 'white';
+            typingElement.style.color = 'black';
         }
         else{
             typingElement.style.animation = 'none';

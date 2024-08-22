@@ -1,19 +1,44 @@
-@media screen and (max-width:1200px) {
-    #desktop-nav{
-        display: none;
+@media screen and (max-width: 1200px) {
+    #desktop-nav {
+        display: none; /* Hide desktop navigation */
     }
-    #hamburger-nav{
-        display: flex;
+    
+    #hamburger-nav {
+        display: flex; /* Show hamburger navigation */
+        justify-content: space-between; /* Center items or adjust alignment */
+        align-items: center;
+        padding: 0 1rem; /* Adjust padding as needed */
     }
-    .container{
-        grid-template-columns: auto;
-        text-align: center;
+    
+    .container {
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+        width: 100%; 
+        margin-bottom: 0; 
+    }
+    
+    .menu-links {
+        width: 90vw; 
+        right: 5vw;
+    }
+    
+    .parent-container, .education {
+        flex-direction: column; 
+        padding: 20px; 
+    }
+    
+    .fixedbox, .box {
+        width: 90%; 
+        margin: 20px 0; /* Adjust margin for spacing */
     }
 }
 
+
 /* WebKit browsers */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 4px;
     height: 2px;
 }
 
