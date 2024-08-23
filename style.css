@@ -7,7 +7,6 @@ body {
     padding: 0; /* Ensure no default padding */
 }
 
-/* Navbar styling */
 .navbar-dark .navbar-nav .nav-link {
     font-weight: 100;
     font-size: 4vh;
@@ -23,6 +22,11 @@ body {
     font-weight: 100;
     padding-left: 4vw;
     font-size: 30px;
+}
+#navbarNav a:hover{
+    color: #a7a7a7;
+    text-decoration: underline;
+    text-underline-offset: .5rem;
 }
 
 /* Ensure each page fits within the viewport */
