@@ -56,7 +56,10 @@ body {
     font-size: 25px;
 }
 #aboutme .card {
+    font-size: 20px;
+    font-weight: 200;
     height: 100%;
+    border: 2px solid black;
 }
 #aboutme h2 {
     margin-top: 0; /* Remove default margin-top */
