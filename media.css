@@ -1,63 +1,85 @@
-@media screen and (max-width: 1200px) {
-    #desktop-nav {
-        display: none; /* Hide desktop navigation */
-    }
-    
-    #hamburger-nav {
-        display: flex; /* Show hamburger navigation */
-        justify-content: space-between; /* Center items or adjust alignment */
-        align-items: center;
-        padding: 0 1rem; /* Adjust padding as needed */
-    }
-    
-    .container {
-        display: flex; 
-        flex-direction: column; 
-        align-items: center; 
-        text-align: center; 
-        width: 100%; 
-        margin-bottom: 0; 
-    }
-    
-    .menu-links {
-        width: 90vw; 
-        right: 5vw;
-    }
-    
-    .parent-container, .education {
-        flex-direction: column; 
-        padding: 20px; 
-    }
-    
-    .fixedbox, .box {
-        width: 90%; 
-        margin: 20px 0; /* Adjust margin for spacing */
-    }
-}
-
-
-/* WebKit browsers */
 ::-webkit-scrollbar {
-    width: 4px;
-    height: 2px;
+    width: 12px; 
 }
 
 ::-webkit-scrollbar-track {
-    
-    border-radius: 10px;
+    background: transparent; 
 }
 
 ::-webkit-scrollbar-thumb {
-   
-    border-radius: 10px;
+    background: rgba(116, 116, 116, 0.2); 
+    border-radius: 10px; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #9c9c9c;
+    background: rgba(160, 160, 160, 0.4); 
+}
+/* Firefox */
+.scrollable {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent; 
 }
 
-/* Firefox */
-body {
-    scrollbar-width: thin;
-    scrollbar-color: #9c9c9c #f1f1f1;
-}
+/* From Uiverse.io by andrew-demchenk0 */ 
+.button {
+    --main-focus: #2d8cf0;
+    --font-color: #dedede;
+    --bg-color-sub: #222;
+    --bg-color: #323232;
+    --main-color: #dedede;
+    position: relative;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .button, .button__icon, .button__text {
+    transition: all 0.3s;
+  }
+  
+  .button .button__text {
+    transform: translateX(21px);
+    color: var(--font-color);
+    font-weight: 600;
+  }
+  
+  .button .button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    background-color: var(--bg-color-sub);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button .svg {
+    width: 20px;
+    fill: var(--main-color);
+  }
+  
+  .button:hover {
+    background: var(--bg-color);
+  }
+  
+  .button:hover .button__text {
+    color: transparent;
+  }
+  
+  .button:hover .button__icon {
+    width: 148px;
+    transform: translateX(0);
+  }
+  
+  .button:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color);
+  }

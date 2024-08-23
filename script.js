@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (isInViewport(typingElement)) {
             typingElement.style.animation = 
             'typing 1.5s steps(20, end), blink-caret .75s step-end infinite';
-            typingElement.style.color = 'black';
+            typingElement.style.color = 'white';
         }
         else{
             typingElement.style.animation = 'none';
@@ -54,3 +54,17 @@ document.addEventListener("DOMContentLoaded", function() {
     checkTypingAnimation(); // Initial check
 });
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const button = document.querySelector('.button-50');
+    
+    button.addEventListener('click', function() {
+        const file = button.getAttribute('data-file');
+        const a = document.createElement('a');
+        a.href = file;
+        a.download = file.split('/').pop(); // Get the file name from the path
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    });
+});

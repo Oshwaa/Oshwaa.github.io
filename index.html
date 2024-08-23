@@ -4,88 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="buttons.css">
+    <script src="script.js"></script>
 </head>
 <body>
-    <nav id="desktop-nav">
-        <div class="logo">Ivan Tomazar</div>
-        <ul class="nav-links">
-            <li><a href="#aboutme">About me</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <nav id="hamburger-nav">
-        <div class="hamburger-logo">Ivan Tomazar</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Ivan Tomazar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#aboutme">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
             </div>
-            <ul class="menu-links">
-                <li><a href="#aboutme">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
         </div>
     </nav>
-   
-    <div class="container">
-        <h1 style="font-size: 10vw;">Hello World</h1>
-    </div>   
-<!------PAGE2------->
-    <section class="parent-container" id="aboutme">
-        <p class="psection">About me</p>
-        <div class="container2"> 
-            <h1 class="typing" style="font-size: 8vw;">I'm Ivan </h1>
-            <p class="boxtext">,an aspiring back-end developer passionate 
-                about building efficient server-side solutions.</p>
-        </div>
-        <div id="education" class="education">
-            <div class="fixedbox">
-                <h2>Education</h2>
-                <img src="assets/education.png" alt="Education-logo" class="mini-icon">
-                <p style="font-weight: bold;">AMA Computer College Cabanatuan</p>
-                <p>Bachelor Of Science In Computer Engineering</p>
-                <p>Major in Web Application Development</p>            
-            </div>
-            <div class="fixedbox">
-                <h2>Certificates and Badges</h2>
-                <img src="assets/experience.png" alt="Education-logo" class="mini-icon">
-                <div class="button-container">
-                    <button onclick="window.location.href='https://www.credly.com/badges/127bdddb-8eef-4b75-a680-ff9a851af286/public_url';" class="link-button">• CCNA - Introduction to Networks</button>
-                    <button onclick="window.location.href='https://www.credly.com/badges/77582a95-d857-4e8e-8a5f-bed76a4b32ff/public_url';" class="link-button">• Network Security</button>
-                    <button onclick="window.location.href='https://simpli.app.link/nDKYty8rbMb';" class="link-button">• Getting Started With Node.js</button>
-                    <button onclick="window.location.href='https://simpli-web.app.link/e/JErTHVDQgMb';" class="link-button">• Become a Data Science Expert with Python Django Tutorial</button>
+
+
+   <span id="homepage"> <div class="container text-center my-5 page">
+            <h1>Hello World</h1>
+            <span class="button-container">
+                <button class="button-50" data-file="assets/IJST_CV.pdf">Download CV</button>      
+    </div></span>
+    
+    
+    
+
+    <!------PAGE2------->
+    <!------PAGE2------->
+<section id="aboutme" class="container page bg-white">
+    <h2 class="text-center mb-4">About Me</h2>
+    <h3 class="myname">I'm Ivan</h3>
+    <p>,an aspiring back-end developer passionate 
+        about building efficient server-side solutions.</p>
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Education</h3>
+                    <img src="assets/education.png" alt="Education-logo" class="img-fluid mb-3" style="max-width: 80px;">
+                    <p class="fw-bold">AMA Computer College Cabanatuan</p>
+                    <p>Bachelor Of Science In Computer Engineering</p>
+                    <p>Major in Web Application Development</p>
                 </div>
             </div>
-            <div class="fixedbox">
-                <h2>Skills</h2>
-                <img src="assets/skills.png" alt="Skill-logo" class="mini-icon">
-                <p>• Web Development • Software Development</p>
-                <p>• C# • PHP • Javascript</p>
-                <p>• Node.js</p>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Certificates and Badges</h3>
+                    <img src="assets/experience.png" alt="Certificates-logo" class="img-fluid mb-3" style="max-width: 80px;">
+                    <a href="https://www.credly.com/badges/127bdddb-8eef-4b75-a680-ff9a851af286/public_url" class="text-custom d-block mb-2">• CCNA - Introduction to Networks</a>
+                    <a href="https://www.credly.com/badges/77582a95-d857-4e8e-8a5f-bed76a4b32ff/public_url" class="text-custom d-block mb-2">• Network Security</a>
+                    <a href="https://simpli.app.link/nDKYty8rbMb" class="text-custom d-block mb-2">• Getting Started With Node.js</a>
+                    <a href="https://simpli-web.app.link/e/JErTHVDQgMb" class="text-custom d-block">• Become a Data Science Expert with Python Django Tutorial</a>
+                </div>
             </div>
         </div>
-    </section>
-<!------PAGE3------->
-    <section class="parent-container" style="background-color: black;">
-        <h1>MEOW</h1>
-        <h1>Bringing Ideas to Life: Work in Progress.</h1>
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Skills</h3>
+                    <img src="assets/skills.png" alt="Skills-logo" class="img-fluid mb-3" style="max-width: 80px;">
+                    <p>• Web Development • Software Development</p>
+                    <p>• C# • PHP • Javascript</p>
+                    <p>• Node.js</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!------PAGE3------->
+    <section class="container text-center my-5 page" id="projects" style="background-color: black;">
+        <h1 class="text-white">MEOW</h1>
+        <h2 class="text-white">Bringing Ideas to Life: Work in Progress.</h2>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            
-            <ul class="footer-links">
-                <li><a href="#">ijstomazar@gmail.com</a></li>
-            </ul>
-        </div>
+    <footer class="bg-dark text-white text-center py-4">
+        <ul class="list-unstyled">
+            <li><a href="mailto:ijstomazar@gmail.com" class="text-white">ijstomazar@gmail.com</a></li>
+        </ul>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
