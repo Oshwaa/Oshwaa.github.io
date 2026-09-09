@@ -7,6 +7,7 @@ export const personal = {
   location: "Makati City, Metro Manila",
   linkedin: "https://linkedin.com/in/ivan-tomazar-74bb3b290",
   github: "https://github.com/Oshwaa",
+  portfolio: "https://oshwaa.github.io/",
   cvFile: "/Ivan_Joshua_Tomazar_CV.pdf",
 };
 
