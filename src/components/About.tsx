@@ -10,7 +10,7 @@ const quickFacts = [
 
 function toKey(category: string) {
   const words = category.toLowerCase().match(/[a-z0-9]+/g) ?? [];
-  return words.map((w, i) => (i === 0 ? w : w[0].toUpperCase() + w.slice(1))).join("");
+  return words.join("_");
 }
 
 export default function About() {
@@ -61,14 +61,16 @@ export default function About() {
 
       <div className="mt-16">
         <h3 className="mb-6 text-xl font-medium text-neutral-900">Skills</h3>
-        <TerminalCard title="skills.ts" variant="light">
+        <TerminalCard title="skills.py" variant="light">
           <div className="text-neutral-400">
-            const <span className="text-neutral-900">skills</span> = {"{"}
+            <span className="text-neutral-900">skills</span> = {"{"}
           </div>
           <div className="space-y-3 pl-4">
             {skills.map((group) => (
               <div key={group.category}>
-                <div className="text-neutral-500">{toKey(group.category)}: [</div>
+                <div className="text-neutral-500">
+                  &quot;{toKey(group.category)}&quot;: [
+                </div>
                 <div className="flex flex-wrap gap-1.5 py-2 pl-4">
                   {group.items.map((item) => (
                     <span
