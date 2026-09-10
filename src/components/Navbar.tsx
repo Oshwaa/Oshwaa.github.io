@@ -13,22 +13,22 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-4 z-50 px-4">
-      <nav className="mx-auto flex max-w-2xl items-center justify-between rounded-full border border-white/10 bg-neutral-950/80 px-6 py-3 text-white shadow-lg shadow-black/30 backdrop-blur-md">
-        <a href="#top" className="text-sm font-light tracking-wide">
+    <header className="fixed inset-x-0 top-3 z-50 px-3 sm:top-4 sm:px-4">
+      <nav className="mx-auto flex max-w-2xl items-center justify-between rounded-full border border-white/10 bg-neutral-950/80 px-4 py-2 text-white shadow-lg shadow-black/30 backdrop-blur-md sm:px-6 sm:py-3">
+        <a href="#top" className="text-xs font-light tracking-wide sm:text-sm">
           Ivan Tomazar
         </a>
 
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="flex flex-col gap-1.5 p-2 md:hidden"
+          className="flex flex-col gap-1.5 p-1.5 md:hidden"
           aria-label="Toggle navigation"
           aria-expanded={open}
         >
-          <span className={`h-0.5 w-5 bg-white transition ${open ? "translate-y-2 rotate-45" : ""}`} />
-          <span className={`h-0.5 w-5 bg-white transition ${open ? "opacity-0" : ""}`} />
-          <span className={`h-0.5 w-5 bg-white transition ${open ? "-translate-y-2 -rotate-45" : ""}`} />
+          <span className={`h-0.5 w-4 bg-white transition ${open ? "translate-y-1.5 rotate-45" : ""}`} />
+          <span className={`h-0.5 w-4 bg-white transition ${open ? "opacity-0" : ""}`} />
+          <span className={`h-0.5 w-4 bg-white transition ${open ? "-translate-y-1.5 -rotate-45" : ""}`} />
         </button>
 
         <ul className="hidden gap-7 text-sm font-light tracking-wide text-neutral-400 md:flex">
@@ -43,7 +43,7 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <ul className="mx-auto mt-2 flex max-w-2xl flex-col gap-1 rounded-2xl border border-white/10 bg-neutral-950/95 px-6 py-3 text-sm font-light tracking-wide text-neutral-400 shadow-lg shadow-black/30 backdrop-blur-md md:hidden">
+        <ul className="mx-auto mt-2 flex max-w-2xl flex-col gap-1 rounded-2xl border border-white/10 bg-neutral-950/95 px-4 py-2 text-sm font-light tracking-wide text-neutral-400 shadow-lg shadow-black/30 backdrop-blur-md md:hidden">
           {links.map((link) => (
             <li key={link.href}>
               <a
