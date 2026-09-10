@@ -50,8 +50,8 @@ export default function Hero() {
             <a href={personal.github} target="_blank" rel="noreferrer" className="transition hover:text-white">
               GitHub
             </a>
-            <a href={personal.portfolio} target="_blank" rel="noreferrer" className="transition hover:text-white">
-              Portfolio
+            <a href="#projects" className="transition hover:text-white">
+              Selected Work
             </a>
             <span>{personal.location}</span>
           </div>

@@ -6,7 +6,7 @@ export default function Stats() {
   const languages = skills.find((group) => group.category === "Languages")?.items.length ?? 0;
 
   const stats = [
-    { value: `${YEARS_EXPERIENCE}+`, label: "Years Experience" },
+    { value: `${YEARS_EXPERIENCE}+`, label: "Years of Experience" },
     { value: `${languages}`, label: "Languages & Frameworks" },
     { value: `${certifications.length}`, label: "Certifications" },
   ];
