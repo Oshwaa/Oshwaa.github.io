@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { personal, projects, skills } from "@/lib/data";
 
 const backend = skills.find((group) => group.category === "Backend")?.items ?? [];
@@ -9,27 +10,39 @@ const coreStack = [...backend, ...frontend];
 
 type Line = { type: "input" | "output"; text: string };
 
-const commands: Record<string, () => string[]> = {
-  help: () => ["Commands: whoami, status, stack, projects, contact, about, clear"],
-  whoami: () => [personal.name, `${personal.title} — ${personal.subtitle}`],
-  status: () => ["Open to full-time & freelance work"],
-  stack: () => [coreStack.join(", ")],
-  projects: () => projects.map((p) => `- ${p.name}`),
-  contact: () => [personal.email, personal.linkedin, personal.github],
-  about: () => [
-    "Backend-focused full-stack developer based in Makati.",
-    "Scroll down for the full story, or type 'contact' to reach me.",
-  ],
-  sudo: () => ["Nice try."],
-};
+function buildCommands(goHome: () => void): Record<string, () => string[]> {
+  return {
+    help: () => ["Commands: whoami, status, stack, projects, contact, about, home, clear"],
+    home: () => {
+      goHome();
+      return ["Heading home..."];
+    },
+    whoami: () => [personal.name, `${personal.title} — ${personal.subtitle}`],
+    status: () => ["Open to full-time & freelance work"],
+    stack: () => [coreStack.join(", ")],
+    projects: () => projects.map((p) => `- ${p.name}`),
+    contact: () => [personal.email, personal.linkedin, personal.github],
+    about: () => [
+      "Backend-focused full-stack developer based in Makati.",
+      "Scroll down for the full story, or type 'contact' to reach me.",
+    ],
+    sudo: () => ["Nice try."],
+  };
+}
 
-export default function InteractiveTerminal() {
-  const [history, setHistory] = useState<Line[]>([
-    { type: "output", text: "Type 'help' to see what this does." },
-  ]);
+export default function InteractiveTerminal({
+  initialLines = ["Type 'help' to see what this does."],
+}: {
+  initialLines?: string[];
+}) {
+  const [history, setHistory] = useState<Line[]>(
+    initialLines.map((text) => ({ type: "output", text })),
+  );
   const [input, setInput] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+  const commands = buildCommands(() => router.push("/"));
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ block: "end" });
