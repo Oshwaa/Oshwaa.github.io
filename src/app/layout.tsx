@@ -9,7 +9,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Ivan Tomazar — Full-Stack Developer",
+  title: "Ivan Tomazar",
   description:
     "Ivan Joshua Tomazar — Full-Stack Developer, backend focused. Node.js, NestJS, FastAPI, Next.js, Vue.js.",
 };
