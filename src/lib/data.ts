@@ -121,6 +121,19 @@ export type ProjectEntry = {
 
 export const projects: ProjectEntry[] = [
   {
+    name: "BOMO — Hotel Booking & Reviews Platform",
+    period: "July – August 2026",
+    stack: ["NestJS", "Next.js", "TypeScript", "TypeORM", "PostgreSQL", "Docker", "Claude Code"],
+    image: "/projects/bomo.jpg",
+    url: "https://bomo.world",
+    bullets: [
+      "Built the backend for a hotel booking and reviews platform in NestJS and TypeScript, covering reservations, guest management, reviews, and a draft-to-publish content workflow.",
+      "Integrated payment gateway processing into the reservation flow and built a reusable SendGrid email service for transactional notifications.",
+      "Hardened reservation handling and validated releases against production before each deploy.",
+      "Used Claude Code throughout for implementation, debugging, refactoring, and code analysis.",
+    ],
+  },
+  {
     name: "Constellia — Hyperlocal Weather Forecasting",
     period: "2025 – Present",
     stack: ["Python", "R", "Falcon", "Docker", "Bash", "Grafana"],
@@ -141,19 +154,6 @@ export const projects: ProjectEntry[] = [
     url: "https://nycenergytools.com",
     bullets: [
       "Developed the frontend for a City University of New York (CUNY) client website, an energy tool lending platform, implementing website layouts and components based on project requirements.",
-    ],
-  },
-  {
-    name: "BOMO — Hotel Booking & Reviews Platform",
-    period: "July – August 2026",
-    stack: ["NestJS", "Next.js", "TypeScript", "TypeORM", "PostgreSQL", "Docker", "Claude Code"],
-    image: "/projects/bomo.jpg",
-    url: "https://bomo.world",
-    bullets: [
-      "Built the backend for a hotel booking and reviews platform in NestJS and TypeScript, covering reservations, guest management, reviews, and a draft-to-publish content workflow.",
-      "Integrated payment gateway processing into the reservation flow and built a reusable SendGrid email service for transactional notifications.",
-      "Hardened reservation handling and validated releases against production before each deploy.",
-      "Used Claude Code throughout for implementation, debugging, refactoring, and code analysis.",
     ],
   },
   {

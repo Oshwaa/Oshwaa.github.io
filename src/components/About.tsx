@@ -1,5 +1,6 @@
 import { certifications, education, experience, personal, skills } from "@/lib/data";
 import TerminalCard from "@/components/TerminalCard";
+import GridBackdrop from "@/components/GridBackdrop";
 
 const quickFacts = [
   { key: "location", value: personal.location },
@@ -15,15 +16,16 @@ function toKey(category: string) {
 
 export default function About() {
   return (
-    <section id="about" className="mx-auto max-w-6xl px-6 py-24">
-      <p className="text-center text-xs font-medium tracking-[0.25em] text-neutral-400 uppercase">
+    <section id="about" className="relative overflow-hidden px-6 py-24">
+      <GridBackdrop variant="light" />
+      <p className="relative text-center text-xs font-medium tracking-[0.25em] text-neutral-400 uppercase">
         01 · About
       </p>
-      <h2 className="mt-3 text-center text-3xl font-extralight tracking-tight text-neutral-900">
+      <h2 className="relative mt-3 text-center text-3xl font-extralight tracking-tight text-neutral-900">
         About Me
       </h2>
 
-      <div className="mt-14 grid gap-10 lg:grid-cols-5 lg:items-start">
+      <div className="relative mx-auto mt-14 grid max-w-6xl gap-10 lg:grid-cols-5 lg:items-start">
         <div className="lg:col-span-3">
           <h3 className="mb-4 text-xl font-medium text-neutral-900">I&apos;m Ivan</h3>
           <p className="text-base font-light text-neutral-600">
@@ -38,7 +40,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="lg:col-span-2">
+        <div className="transition duration-300 hover:-translate-y-1 lg:col-span-2">
           <TerminalCard title="about.json" variant="light">
             <pre className="whitespace-pre-wrap text-neutral-700">
               <span className="text-neutral-400">{"{"}</span>
@@ -59,7 +61,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="mt-16">
+      <div className="relative mx-auto mt-16 max-w-6xl transition duration-300 hover:-translate-y-1">
         <h3 className="mb-6 text-xl font-medium text-neutral-900">Skills</h3>
         <TerminalCard title="skills.py" variant="light">
           <div className="text-neutral-400">
@@ -89,7 +91,7 @@ export default function About() {
         </TerminalCard>
       </div>
 
-      <div className="mt-16">
+      <div className="relative mx-auto mt-16 max-w-6xl">
         <h3 className="mb-6 text-xl font-medium text-neutral-900">Certifications</h3>
         <div className="flex flex-wrap gap-3">
           {certifications.map((cert) => (
