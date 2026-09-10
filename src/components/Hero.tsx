@@ -2,6 +2,7 @@ import { personal, skills } from "@/lib/data";
 import GridBackdrop from "@/components/GridBackdrop";
 import TerminalCard from "@/components/TerminalCard";
 import InteractiveTerminal from "@/components/InteractiveTerminal";
+import CursorGlow from "@/components/CursorGlow";
 
 const backend = skills.find((group) => group.category === "Backend")?.items ?? [];
 const frontend = skills.find((group) => group.category === "Frontend")?.items ?? [];
@@ -14,6 +15,7 @@ export default function Hero() {
       className="relative flex min-h-screen items-center overflow-hidden bg-neutral-950 px-6 pt-32 pb-24 text-white"
     >
       <GridBackdrop />
+      <CursorGlow />
 
       <div
         aria-hidden

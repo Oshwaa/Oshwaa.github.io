@@ -48,3 +48,8 @@ body {
 .cursor-blink {
   animation: cursor-blink 1s steps(1, jump-none) infinite;
 }
+
+::selection {
+  background: #ffffff;
+  color: #0a0a0a;
+}

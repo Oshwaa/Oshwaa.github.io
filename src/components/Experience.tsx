@@ -12,8 +12,19 @@ export default function Experience() {
         <h2 className="mt-3 text-center text-3xl font-extralight tracking-tight">Experience</h2>
 
         <div className="mt-16 space-y-16">
-          {experience.map((job) => (
-            <div key={`${job.role}-${job.company}`} className="border-l border-white/15 pl-8">
+          {experience.map((job, index) => {
+            const isCurrent = job.period.toLowerCase().includes("present");
+            return (
+            <div key={`${job.role}-${job.company}`} className="relative border-l border-white/15 pl-10">
+              <div className="absolute top-0 -left-4.5 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-neutral-950">
+                {isCurrent && (
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white/10" />
+                )}
+                <span className="relative font-mono text-xs text-neutral-400">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+              </div>
+
               <div className="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
                 <h3 className="text-lg font-medium">{job.role}</h3>
                 <span className="text-sm font-light text-neutral-500">{job.period}</span>
@@ -58,7 +69,8 @@ export default function Experience() {
                 ))}
               </ul>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
