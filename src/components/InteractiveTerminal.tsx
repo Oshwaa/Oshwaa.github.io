@@ -10,11 +10,22 @@ const coreStack = [...backend, ...frontend];
 
 type Line = { type: "input" | "output"; text: string };
 
-function buildCommands(goHome: () => void): Record<string, () => string[]> {
+const SECTIONS: Record<string, string> = {
+  about: "about",
+  experience: "experience",
+  projects: "projects",
+  work: "projects",
+  contact: "contact",
+};
+
+function buildCommands(goToSection: (id: string) => void): Record<string, () => string[]> {
   return {
-    help: () => ["Commands: whoami, status, stack, projects, contact, about, home, clear"],
+    help: () => [
+      "Commands: whoami, status, stack, projects, contact, about, ls, cd <dir>, home, clear",
+    ],
+    ls: () => ["about/  experience/  projects/  contact/"],
     home: () => {
-      goHome();
+      goToSection("top");
       return ["Heading home..."];
     },
     whoami: () => [personal.name, `${personal.title} — ${personal.subtitle}`],
@@ -40,17 +51,44 @@ export default function InteractiveTerminal({
   );
   const [input, setInput] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const historyRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
-  const commands = buildCommands(() => router.push("/"));
+
+  function goToSection(id: string) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      router.push(id === "top" ? "/" : `/#${id}`);
+    }
+  }
+
+  const commands = buildCommands(goToSection);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ block: "end" });
+    const el = historyRef.current;
+    if (el) el.scrollTop = el.scrollHeight;
   }, [history]);
 
+  function runCd(target: string | undefined): Line[] {
+    if (!target || target === "~" || target === "/" || target === "home") {
+      goToSection("top");
+      return [];
+    }
+    const clean = target.replace(/\/+$/, "");
+    const id = SECTIONS[clean];
+    if (id) {
+      goToSection(id);
+      return [];
+    }
+    return [{ type: "output", text: `bash: cd: ${target}: No such file or directory` }];
+  }
+
   function runCommand(raw: string) {
-    const cmd = raw.trim().toLowerCase();
-    if (cmd === "") return;
+    const trimmed = raw.trim();
+    if (trimmed === "") return;
+
+    const [cmd, ...args] = trimmed.toLowerCase().split(/\s+/);
 
     if (cmd === "clear") {
       setHistory([]);
@@ -58,7 +96,10 @@ export default function InteractiveTerminal({
     }
 
     const next: Line[] = [...history, { type: "input", text: raw }];
-    if (commands[cmd]) {
+
+    if (cmd === "cd") {
+      next.push(...runCd(args[0]));
+    } else if (commands[cmd]) {
       commands[cmd]().forEach((line) => next.push({ type: "output", text: line }));
     } else {
       next.push({ type: "output", text: `command not found: ${cmd} (try 'help')` });
@@ -68,14 +109,13 @@ export default function InteractiveTerminal({
 
   return (
     <div className="cursor-text" onClick={() => inputRef.current?.focus()}>
-      <div className="max-h-40 space-y-1 overflow-y-auto pr-1">
+      <div ref={historyRef} className="max-h-40 space-y-1 overflow-y-auto pr-1">
         {history.map((line, i) => (
           <div key={i} className={line.type === "input" ? "text-white" : "text-neutral-400"}>
             {line.type === "input" && <span className="text-neutral-500">$ </span>}
             {line.text}
           </div>
         ))}
-        <div ref={bottomRef} />
       </div>
 
       <form
