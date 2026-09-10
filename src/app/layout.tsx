@@ -11,7 +11,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Ivan Tomazar",
   description:
-    "Ivan Joshua Tomazar — Full-Stack Developer, backend focused. Node.js, NestJS, FastAPI, Next.js, Vue.js.",
+    "Ivan Tomazar — Full-Stack Developer, backend focused. Node.js, NestJS, FastAPI, Next.js, Vue.js.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
