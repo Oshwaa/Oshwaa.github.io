@@ -122,7 +122,7 @@ export type ProjectEntry = {
 export const projects: ProjectEntry[] = [
   {
     name: "BOMO — Hotel Booking & Reviews Platform",
-    period: "July – August 2026",
+    period: "June – August 2026",
     stack: ["NestJS", "Next.js", "TypeScript", "TypeORM", "PostgreSQL", "Docker", "Claude Code"],
     image: "/projects/bomo.jpg",
     url: "https://bomo.world",
