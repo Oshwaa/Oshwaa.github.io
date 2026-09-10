@@ -13,17 +13,15 @@ export default function Stats() {
   ];
 
   return (
-    <section className="border-t border-white/10 bg-neutral-950 px-6 py-14 text-white">
-      <div className="mx-auto grid max-w-md grid-cols-3 gap-y-10">
-        {stats.map((stat) => (
-          <div key={stat.label} className="text-center">
-            <CountUp value={stat.value} suffix={stat.suffix} />
-            <p className="mt-2 text-xs font-light tracking-wide text-neutral-400 uppercase">
-              {stat.label}
-            </p>
-          </div>
-        ))}
-      </div>
-    </section>
+    <div className="mx-auto grid max-w-md grid-cols-3 gap-6 sm:gap-10">
+      {stats.map((stat) => (
+        <div key={stat.label} className="text-center">
+          <CountUp value={stat.value} suffix={stat.suffix} />
+          <p className="mt-2 text-xs font-light tracking-wide text-neutral-400 uppercase">
+            {stat.label}
+          </p>
+        </div>
+      ))}
+    </div>
   );
 }

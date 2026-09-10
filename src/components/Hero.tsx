@@ -3,6 +3,7 @@ import GridBackdrop from "@/components/GridBackdrop";
 import TerminalCard from "@/components/TerminalCard";
 import InteractiveTerminal from "@/components/InteractiveTerminal";
 import CursorGlow from "@/components/CursorGlow";
+import Stats from "@/components/Stats";
 
 const backend = skills.find((group) => group.category === "Backend")?.items ?? [];
 const frontend = skills.find((group) => group.category === "Frontend")?.items ?? [];
@@ -12,7 +13,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-screen items-center overflow-hidden bg-neutral-950 px-6 pt-32 pb-24 text-white"
+      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-neutral-950 px-6 pt-32 pb-16 text-white"
     >
       <GridBackdrop />
       <CursorGlow />
@@ -26,7 +27,7 @@ export default function Hero() {
         className="pointer-events-none absolute top-1/3 left-0 h-90 w-90 -translate-x-1/2 rounded-full bg-white/3 blur-[100px]"
       />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-16 lg:grid-cols-5">
+      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-16 lg:grid-cols-5">
         <div className="lg:col-span-3">
           <p className="mb-4 text-xs font-medium tracking-[0.3em] text-neutral-400 uppercase">
             {personal.title} · {personal.subtitle}
@@ -114,6 +115,10 @@ export default function Hero() {
             </div>
           </TerminalCard>
         </div>
+      </div>
+
+      <div className="relative mx-auto mt-20 w-full max-w-6xl border-t border-white/10 pt-10">
+        <Stats />
       </div>
 
       <a
