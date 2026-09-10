@@ -8,6 +8,11 @@ const quickFacts = [
   { key: "currently", value: `${experience[0].role} @ ${experience[0].company}` },
 ];
 
+function toKey(category: string) {
+  const words = category.toLowerCase().match(/[a-z0-9]+/g) ?? [];
+  return words.map((w, i) => (i === 0 ? w : w[0].toUpperCase() + w.slice(1))).join("");
+}
+
 export default function About() {
   return (
     <section id="about" className="mx-auto max-w-6xl px-6 py-24">
@@ -56,23 +61,30 @@ export default function About() {
 
       <div className="mt-16">
         <h3 className="mb-6 text-xl font-medium text-neutral-900">Skills</h3>
-        <div className="grid gap-6 sm:grid-cols-2">
-          {skills.map((group) => (
-            <div key={group.category}>
-              <p className="text-xs tracking-wide text-neutral-400 uppercase">{group.category}</p>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-neutral-200 px-3 py-1 text-xs font-light text-neutral-600"
-                  >
-                    {item}
-                  </span>
-                ))}
+        <TerminalCard title="skills.ts" variant="light">
+          <div className="text-neutral-400">
+            const <span className="text-neutral-900">skills</span> = {"{"}
+          </div>
+          <div className="space-y-3 pl-4">
+            {skills.map((group) => (
+              <div key={group.category}>
+                <div className="text-neutral-500">{toKey(group.category)}: [</div>
+                <div className="flex flex-wrap gap-1.5 py-2 pl-4">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded border border-neutral-200 bg-neutral-50 px-2 py-0.5 text-xs text-neutral-700"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+                <div className="text-neutral-500">],</div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+          <div className="text-neutral-400">{"}"}</div>
+        </TerminalCard>
       </div>
 
       <div className="mt-16">
