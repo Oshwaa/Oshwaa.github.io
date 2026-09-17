@@ -7,7 +7,7 @@ export const personal = {
   location: "Makati City, Metro Manila",
   linkedin: "https://linkedin.com/in/ivan-tomazar-74bb3b290",
   github: "https://github.com/Oshwaa",
-  cvFile: "/Ivan_Joshua_Tomazar_CV.pdf",
+  cvFile: "/Ivan_Joshua_Tomazar_2026-sept.pdf",
 };
 
 export const skills: { category: string; items: string[] }[] = [
@@ -78,8 +78,8 @@ export const experience: ExperienceEntry[] = [
     role: "Full-Stack Developer",
     company: "Zato Novo Inc. (Remote)",
     companyUrl: "https://www.zatonovo.com/",
-    period: "July 2025 – Present",
-    note: "Position ending due to company closure in November 2026",
+    period: "July 2025 – September 30",
+    note: "Position ending due to company closure in September 30 2026",
     stack: ["Python", "R", "Falcon", "Docker", "Bash", "Grafana", "Hugo"],
     bullets: [
       "Developed and integrated backend services and REST APIs in R and Python (Falcon) supporting ECMWF weather forecast extraction, data processing, and device management workflows.",
